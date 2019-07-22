@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './landing/navbar/navbar.component';
@@ -22,6 +23,9 @@ import { AddEventComponent } from './dashboard/entreprise-board/events/add-event
 import { EventDetailsComponent } from './dashboard/entreprise-board/events/event-details/event-details.component';
 import { EntrepriseProfileComponent } from './dashboard/entreprise-board/profile/profile.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
+
 declare const $:any;
 @Component({
   selector: 'app-entrepriseLogin',
@@ -6,10 +9,29 @@ declare const $:any;
   styleUrls: ['./entreprise.component.css']
 })
 export class EntrepriseLoginComponent implements OnInit {
+  EntrepriseForm = new FormGroup({
+    name: new FormControl(),
+    email: new FormControl(),
+    password: new FormControl(),
+    breefing: new FormControl()
 
-  constructor() { }
+  });
+
+  constructor(private Service:AuthService) { }
+  signup(){
+    console.log(this.EntrepriseForm.value);
+    
+    this.Service.addEntreprise(this.EntrepriseForm.value).subscribe(
+      data=>{
+        console.log(data);
+      }
+    );
+  }
+
+
 
   ngOnInit() {
+
 
 
 //image upload

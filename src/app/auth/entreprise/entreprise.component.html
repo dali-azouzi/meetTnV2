@@ -1,51 +1,50 @@
- 
- <div class="signup-content">
-                <div class="signup-desc">
-                    <div class="signup-desc-content">
-                        <h2>Sign<span>up</span></h2>
-                    </div>
+<div class="signup-content">
+    <div class="signup-desc">
+        <div class="signup-desc-content">
+            <h2>Sign<span>up</span></h2>
+        </div>
+    </div>
+    <div class="signup-form-conent">
+        <form [formGroup]="EntrepriseForm" class="signup-form">
+
+            <div class="form-group">
+                <input type="text" formControlName="name" id="your_name" required/>
+                <label for="your_name">Entreprise Name</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" formControlName="email" id="email" required/>
+                <label for="email">Email</label>
+            </div>
+
+            <div class="form-group">
+                <input type="password" formControlName="password" id="your_password" required/>
+                <label for="your_password">Password</label>
+                <span toggle="#your_password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="breefing" id="breef" required/>
+                <label for="breef">Breefing</label>
+            </div>
+
+
+            <div class="form-group mt-5">
+                <div class="fileUpload blue-btn btn width100">
+                    <span>Upload your Entreprise logo</span>
+                    <input type="file" class="uploadlogo" />
                 </div>
-                <div class="signup-form-conent">
-                    <form class="signup-form">
-
-                            <div class="form-group">
-                                <input type="text" name="your_name" id="your_name" required/>
-                                <label for="your_name">Entreprise Name</label>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="text" name="email" id="email" required/>
-                                <label for="email">Email</label>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="password" name="your_password" id="your_password" required/>
-                                <label for="your_password">Password</label>
-                                <span toggle="#your_password" class="zmdi zmdi-eye field-icon toggle-password"></span>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="breef" required/>
-                                <label for="breef">Breefing</label>
-                            </div>
 
 
-                            <div class="form-group mt-5">
-                                    <div class="fileUpload blue-btn btn width100">
-                                            <span>Upload your Entreprise logo</span>
-                                            <input type="file" class="uploadlogo" />
-                                          </div>
-                                
-
-                            </div>
-                            
-
-                    </form>
+            </div>
 
 
-                    <div class="button" style="float:right">
-                            <a>
-                                <span>Upload Now</span>
-                                <svg class="load" version="1.1"x="0px" y="0px" width="30px" height="30px" viewBox="0 0 40 40" enable-background="new 0 0 40 40">
+        </form>
+
+
+        <div class="button" (click)="signup()" style="float:right">
+            <a>
+                <span>Upload Now</span>
+                <svg class="load" version="1.1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 40 40" enable-background="new 0 0 40 40">
                                     <path opacity="0.3" fill="#fff" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
                                     s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
                                     c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
@@ -60,17 +59,17 @@
                                     repeatCount="indefinite"/>
                                     </path>
                                 </svg>
-                                <svg class="check" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                <svg class="check" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
                                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                                 </svg>
-                            </a>
-                            <div>
-                                <span></span>
-                            </div>
-                        </div>
-
-
-
-
-                </div>
+            </a>
+            <div>
+                <span></span>
             </div>
+        </div>
+
+
+
+
+    </div>
+</div>
