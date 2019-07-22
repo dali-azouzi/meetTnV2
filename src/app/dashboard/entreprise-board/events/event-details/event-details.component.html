@@ -1,0 +1,193 @@
+<div class="pb-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="row">
+        <div class="col-xl-5 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title mb-0 text-blue text-lg text-uppercase">Junior FullStack java/JEE</h5>
+                </div>
+              </div>
+              <p class="mt-3 mb-0 text-sm">
+                <span class="text-nowrap">2019/06/25 to 2019/06/26</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body p-4">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">Seats reserved</h5>
+                  <span class="h2 font-weight-bold mb-0">8/20</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-primary text-white rounded-circle shadow">
+                    <i class="fas fa-users"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Pending Candidates</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Candidate</th>
+                <th scope="col">Resume</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <a href="#" class="avatar rounded-circle mr-3">
+                      <img alt="Image placeholder" src="../../../../../assets/dashboard/img/theme/team-1-800x800.jpg"
+                        class="rounded-circle">
+                    </a>
+                    <div class="media-body">
+                      <span class="mb-0 text-sm">Azouzi med ali</span>
+                    </div>
+                  </div>
+                </th>
+                <td>
+                  <!-- Modal for PDF view-->
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Modal1">
+                      view resume
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered offset-3" style="width: 50%" role="document">
+                        <div class="modal-content">
+
+                          <div class="modal-body mt--4">
+                            <embed src="../../../../../assets/AzouziMedAli.pdf"style="
+                            min-width: -webkit-fill-available;min-height: -webkit-fill-available;" /> </div>
+
+                        </div>
+                      </div>
+                    </div>
+  
+
+
+                </td>
+                <td>
+                  <span class="badge badge-dot mr-4">
+                    <i class="bg-warning"></i> pending
+                  </span>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success btn-sm">Accept</button>
+                    <button type="button" class="btn btn-danger btn-sm">Decline</button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div class="media align-items-center">
+                    <a href="#" class="avatar rounded-circle mr-3">
+                      <img alt="Image placeholder" src="../../../../../assets/dashboard/img/theme/team-2-800x800.jpg"
+                        class="rounded-circle">
+                    </a>
+                    <div class="media-body">
+                      <span class="mb-0 text-sm">Elyes Mk</span>
+                    </div>
+                  </div>
+                </th>
+                <td>
+                  <!-- Modal for PDF view-->
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#Modal2">
+                    view resume
+                  </button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">view resume</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body mt--4">
+                          <embed src="../../../../../assets/sample.pdf" width="100%" height="450px" /> </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </td>
+                <td>
+                  <span class="badge badge-dot mr-4">
+                    <i class="bg-warning"></i> pending
+                  </span>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success btn-sm">Accept</button>
+                    <button type="button" class="btn btn-danger btn-sm">Decline</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer py-4">
+          <nav aria-label="...">
+            <ul class="pagination justify-content-end mb-0">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">
+                  <i class="fas fa-angle-left"></i>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">
+                  <i class="fas fa-angle-right"></i>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dark table -->
+
+
+</div>

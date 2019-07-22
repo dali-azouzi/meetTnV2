@@ -1,0 +1,28 @@
+@import url('../../../assets/css/styles.css');
+
+
+.svgAnimation{
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+.fade-in-up{
+    display: none;
+}
+.fade-in-left{
+display: none;
+}
+.start.fade-in-up {
+    display: inline;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+}
+.start.fade-in-left{
+    display: inline;
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+
+
+
+
+
