@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   CandidateForm = new FormGroup({
-    name: new FormControl('',Validators.required),
+    name: new FormControl('',[Validators.required, Validators.minLength(6)]),
     email: new FormControl('', Validators.email),
     password: new FormControl('',Validators.minLength(6))
 

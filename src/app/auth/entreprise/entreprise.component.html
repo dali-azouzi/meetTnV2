@@ -10,16 +10,28 @@
             <div class="form-group">
                 <input type="text" formControlName="name" id="your_name" required/>
                 <label for="your_name">Entreprise Name</label>
+                <span class="text-danger" *ngIf="EntrepriseForm.get('name').errors?.required && 
+                (EntrepriseForm.get('name').touched || EntrepriseForm.get('name').dirty)">
+                 Name is required & must be at least 6 characters ...
+             </span>
             </div>
 
             <div class="form-group">
                 <input type="text" formControlName="email" id="email" required/>
                 <label for="email">Email</label>
+                <span class="text-danger" *ngIf="EntrepriseForm.get('email').errors?.required && 
+                (EntrepriseForm.get('email').touched || EntrepriseForm.get('email').dirty)">
+                Email must be a valid email address ...
+             </span>
             </div>
 
             <div class="form-group">
                 <input type="password" formControlName="password" id="your_password" required/>
                 <label for="your_password">Password</label>
+                <span class="text-danger" *ngIf="EntrepriseForm.get('password').errors?.required && 
+                (EntrepriseForm.get('password').touched || EntrepriseForm.get('password').dirty)">
+                Password must be at least 6 characters ...
+             </span>
                 <span toggle="#your_password" class="zmdi zmdi-eye field-icon toggle-password"></span>
             </div>
             <div class="form-group">
