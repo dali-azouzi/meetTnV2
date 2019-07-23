@@ -33,15 +33,32 @@
                 <form [formGroup]="CandidateForm">
                     <label>
         <span>Name</span>
-        <input formControlName="name" type="text" />
+        <input formControlName="name" type="text" required />
+        <span class="help-block ">  
+                <span class="text-danger" *ngIf="CandidateForm.get('name').errors?.required && 
+                (CandidateForm.get('name').touched || CandidateForm.get('name').dirty)">
+                 name is required ...
+             </span>
+                          </span>
       </label>
+
+
                     <label>
         <span>Email</span>
         <input formControlName="email" type="email" />
+        <span class="text-danger" *ngIf="CandidateForm.get('email').errors && 
+        (CandidateForm.get('email').touched || CandidateForm.get('email').dirty)">
+         Wrong email ...
+     </span>
       </label>
+
                     <label>
         <span>Password</span>
         <input formControlName="password" type="password" />
+        <span class="text-danger" *ngIf="CandidateForm.get('password').errors && 
+        (CandidateForm.get('password').touched || CandidateForm.get('password').dirty)">
+         Wrong email ...
+     </span>
       </label>
                 </form>
                 <button type="button" (click)="signup()" class="submit">Sign Up</button>
