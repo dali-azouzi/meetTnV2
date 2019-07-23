@@ -2,16 +2,18 @@
     <div class="cont shadow-box">
         <div class="form sign-in">
             <h2>Welcome back,</h2>
-            <label>
+            <form [formGroup]="signinForm">
+                <label>
       <span>Email</span>
-      <input type="email" />
+      <input formControlName="email" type="email" />
     </label>
-            <label>
+                <label>
       <span>Password</span>
-      <input type="password" />
+      <input formControlName="password" type="password" />
     </label>
-            <p class="forgot-pass">Forgot password?</p>
-            <button type="button" class="submit">Sign In</button>
+            </form>
+            <p *ngIf="error" class="forgot-pass text-danger">WRONG CREDENTIALS ... !</p>
+            <button type="button" (click)="signin()" class="submit">Sign In</button>
         </div>
         <div class="sub-cont">
             <div class="img">
@@ -48,7 +50,7 @@
         <input formControlName="email" type="email" />
         <span class="text-danger" *ngIf="CandidateForm.get('email').errors && 
         (CandidateForm.get('email').touched || CandidateForm.get('email').dirty)">
-         Wrong email ...
+        Email must be a valid email address
      </span>
       </label>
 
@@ -57,12 +59,11 @@
         <input formControlName="password" type="password" />
         <span class="text-danger" *ngIf="CandidateForm.get('password').errors && 
         (CandidateForm.get('password').touched || CandidateForm.get('password').dirty)">
-         Wrong email ...
+        Password must be at least 6 characters
      </span>
       </label>
                 </form>
                 <button type="button" (click)="signup()" class="submit">Sign Up</button>
-
             </div>
         </div>
     </div>

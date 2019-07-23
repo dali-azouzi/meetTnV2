@@ -17,5 +17,8 @@ export class AuthService {
   addEntreprise(body:any){
    return this.router.post(host+'auth/addEntreprise',body)
   }
+  login(body:any){
+   return this.router.post(host+'auth/login',body)
+  }
 
 }
