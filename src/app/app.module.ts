@@ -26,6 +26,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { InterviewComponent } from './dashboard/entreprise-board/interview/interview.component';
+import { candidateInterviewComponent } from './dashboard/candidate-board/interview/interview.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AddEventComponent,
     EventDetailsComponent,
     EntrepriseProfileComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    InterviewComponent,
+    candidateInterviewComponent
   ],
   imports: [
     BrowserModule,

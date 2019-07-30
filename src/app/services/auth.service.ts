@@ -11,7 +11,7 @@ export class AuthService {
 
   constructor( private router : HttpClient) { }
   addCandidate(body:any){
-    return this.router.post(host+'/auth/register',body)
+    return this.router.post(host+'auth/register',body)
   }
 
   addEntreprise(body:any){

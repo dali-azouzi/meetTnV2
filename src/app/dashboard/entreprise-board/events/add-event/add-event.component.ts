@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 declare const $ :any
 declare const M :any
 
@@ -8,6 +9,12 @@ declare const M :any
   styleUrls: ['./add-event.component.css']
 })
 export class AddEventComponent implements OnInit , OnDestroy{
+  test = new FormGroup({
+    name : new FormControl()
+   
+  }
+  );
+
   public deleteCss(url : string) {
   	$("[href*='"+url+"']").remove()
   }
@@ -33,10 +40,14 @@ export class AddEventComponent implements OnInit , OnDestroy{
 
   constructor() { }
 
+  est(){
+    console.log(this.test.value);
+  }
+
   ngOnInit() {
-    this.loadScript('../../../../../assets/dashboard/js/jquery.steps.js')
+    this.loadScript('../../../../../assets/dashboard/js/Kjquery.steps.js')
     this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
-    this.loadScript('../../../../../assets/dashboard/js/entreprisewizard.js')
+    this.loadScript('../../../../../assets/dashboard/js/kentreprisewizard.js')
     this.loadScript('../../../../../assets/dashboard/js/plugins/bootstrap-datepicker.min.js')
     this.css('https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
     this.css('../../../../../assets/dashboard/css/entrepriseWizard.css')

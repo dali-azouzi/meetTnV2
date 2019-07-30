@@ -11,8 +11,9 @@ declare const $:any;
 export class EntrepriseLoginComponent implements OnInit {
   EntrepriseForm = new FormGroup({
     name: new FormControl('',[Validators.required, Validators.minLength(6)]),
-    email: new FormControl('', Validators.email),
     password: new FormControl('',Validators.minLength(6)),
+    email: new FormControl('', Validators.email),
+    
     breefing: new FormControl()
 
   });

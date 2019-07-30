@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <form [formGroup]="" id="wizard" style="width: 71%;">
+    <form [formGroup]="test" id="wizard" style="width: 71%;">
         <!-- SECTION 1 -->
         <h2></h2>
         <section>
@@ -71,7 +71,7 @@
                     <p>Please fill with additional info</p>
                     <div class="form-row">
                         <div class="form-holder w-100">
-                            <input type="text" placeholder="Event title" class="form-control">
+                            <input type="text" placeholder="Event title" class="form-control" formControlName="name">
                         </div>
                     </div>
                     <div class="form-row">
@@ -134,5 +134,8 @@
                 </div>
             </div>
         </section>
+        <input type="button" class="btn btn-info" value="previous">
+        <input type="button" class="btn btn-success" value="Next">
     </form>
+
 </div>

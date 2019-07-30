@@ -8,8 +8,8 @@
                         <div class="card-profile-image">
                             <div class="picture-container">
                                 <div class="picture">
-                                    <img src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4-800x800.jpg" class="rounded-circle " id="wizardPicturePreview">
-                                    <input type="file" id="wizard-picture" class="">
+                                    <img src="{{user.picture}}" class="rounded-circle " id="wizardPicturePreview">
+                                    <input type="file" (change)="imageupload($event)" id="wizard-picture" class="">
                                 </div>
                                 <label href="#" class="btn btn-sm btn-info mr-4" for="wizard-picture">Edit</label>
 
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form [formGroup]="">
+                    <form [formGroup]="profileForm">
                         <h6 class="heading-small text-muted mb-4">User information</h6>
                         <div class="pl-lg-4">
                             <div class="row">
@@ -62,36 +62,31 @@
                                 <div class="col-md-7">
                                     <div class="form-group focused">
                                         <label class="form-control-label" for="input-username">Username</label>
-                                        <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="Elyes mk">
+                                        <input type="text" formControlName="username" id="input-username" value="{{user.name}}" class="form-control form-control-alternative" placeholder="Username">
                                     </div>
                                 </div>
                                 <div class="col-md-7">
                                     <div class="form-group focused">
-                                        <label class="form-control-label" for="input-address">Address</label>
-                                        <input id="input-address" class="form-control form-control-alternative" placeholder="City" value="Ben arous" type="text">
+                                        <label class="form-control-label" for="input-address">Email</label>
+                                        <input id="input-address" formControlName="email" value="{{user.email}}" class=" form-control form-control-alternative " placeholder="Your Email " type="email ">
                                     </div>
                                 </div>
 
 
-                                <div class="col-md-9 col-sm-offset-1" style="margin-top: 1em;">
+                                <div class="col-md-9 col-sm-offset-1 " style="margin-top: 1em; ">
                                     <p>Update your Resume :
-                                        <input class="choose-file upload-btn" type="file" id="choose-file" required style="display:none ;">
-                                        <label for="choose-file" class="upload-file btn btn-file" style="margin-left :1em;">
-                                              <i class="material-icons">attach_file</i>
+                                        <input (change)="PDFupload($event)" class="choose-file upload-btn" type="file" accept="application/pdf" id="choose-file" required style="display:none ; ">
+                                        <label for="choose-file" class="upload-file btn btn-file" style="margin-left :1em; ">
+                                              <i class="material-icons ">attach_file</i>
                                           </label>
                                     </p>
                                 </div>
                                 <div class="col-md-9 ">
                                     <p>Add skills :
-                                        <input type="text" value="Example" data-role="tagsinput" />
+                                        <input class="tagg" type="text" value="{{user.skills}}" data-role="tagsinput" />
                                     </p>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group focused">
-                                        <label>About Me</label>
-                                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>
-                                    </div>
-                                </div>
+                                <button type="button" (click)="update()" class="btn btn-primary btn-lg ">Update</button>
 
                             </div>
 

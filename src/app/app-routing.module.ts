@@ -14,6 +14,8 @@ import { EntrepriseProfileComponent } from './dashboard/entreprise-board/profile
 import { EventsComponent } from './dashboard/entreprise-board/events/events.component';
 import { AddEventComponent } from './dashboard/entreprise-board/events/add-event/add-event.component';
 import { EventDetailsComponent } from './dashboard/entreprise-board/events/event-details/event-details.component';
+import { InterviewComponent } from './dashboard/entreprise-board/interview/interview.component';
+import { candidateInterviewComponent } from './dashboard/candidate-board/interview/interview.component';
 
 const routes: Routes = [
 
@@ -35,9 +37,11 @@ const routes: Routes = [
       {path:'profile',component:EntrepriseProfileComponent},
         {path:'events',component:EventsComponent},
           {path:'events/add',component:AddEventComponent},
-          {path:'events/event-details',component:EventDetailsComponent}
+          {path:'events/event-details/:id',component:EventDetailsComponent}
     ]}
   ]},
+  {path:'interview/entreprise',component:InterviewComponent},
+  {path:'interview/candidate',component:candidateInterviewComponent}
 ];
 
 @NgModule({

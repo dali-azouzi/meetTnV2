@@ -54,6 +54,41 @@
 
             </ul>
 
+            <ul class="navbar-nav align-items-center d-none d-md-flex  offset-5">
+                <li class="nav-item dropdown">
+                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="media align-items-center">
+                            <button type="button" class="btn btn-primary">
+                                <span>google</span>
+                                <span class="badge badge-white">{{NotificationSubs}}</span>
+                              </button>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                        <div class=" dropdown-header noti-title">
+                            <h6 class="text-overflow m-0">Notifications</h6>
+                        </div>
+                        <ng-container *ngFor="let data of Notfication">
+                            <a routerLink="events/event-details/{{data.eventId}}" class="dropdown-item">
+                                <i class="ni ni-bell-55"></i>
+                                <span>You have <span class="text-info"> {{data.pending}} </span> new subscribers in <span class="text-red"> {{data.eventName}} </span></span>
+                            </a>
+                        </ng-container>
+
+
+
+
+                    </div>
+
+                </li>
+            </ul>
+            <button class="btn ml-6 animated" type="button" (mouseover)="hover=true" (mouseout)="hover=false" (click)='logout()' [ngClass]="hover? ' btn-danger' : ''">
+                <span  class="" style="line-height: 0;">
+                <i  class="ni ni-user-run"></i>
+                <label>Logout</label>
+            </span>
+
+            </button>
         </div>
     </div>
 </nav>

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 error=false;
+user : any[]
   signinForm = new FormGroup({
     email : new FormControl(),
     password : new FormControl()
@@ -24,6 +25,7 @@ error=false;
 
   });
   constructor(private Service:AuthService,  private router: Router) { }
+  
   signup(){
     console.log(this.CandidateForm.value);
     
@@ -34,18 +36,21 @@ error=false;
     );
   }
 
+
   signin(){
     console.log(this.signinForm.value);
     this.Service.login(this.signinForm.value).subscribe(
       (data :any) =>{
         console.log(data);
         if (data){
+        this.user=data
+        sessionStorage.setItem("user",JSON.stringify(this.user))
           if (data.user == "entreprise"){
+      
             this.router.navigate(['/dashboard/entreprise']);
           } else {  this.router.navigate(['/dashboard/candidate']);}
         } else {
           this.error=true
-   
         }
        
       }
@@ -55,6 +60,8 @@ error=false;
   }
 
   ngOnInit() {
+   
+
     /* animation js*/
     document.querySelector('.img__btn').addEventListener('click', function() {
       document.querySelector('.cont').classList.toggle('s--signup');
