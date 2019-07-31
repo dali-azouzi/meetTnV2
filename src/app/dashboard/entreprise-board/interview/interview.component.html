@@ -123,14 +123,14 @@
 										<img class="w-40 img-circle" alt="" src="https://dreamguys.co.in/smarthr/orange/assets/img/profiles/avatar-11.jpg"><span class="status online"></span>
                             </span>
                             <span class="chat-user">John Doe</span>
-                            <i class="material-icons" style="margin-left:3rem; cursor:pointer" onClick="redirect('outgoing-call')">call</i></a>
+                            <i class="material-icons" style="margin-left:3rem; cursor:pointer" (click)="calluser()">call</i></a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="page-wrapper" style="min-height: -webkit-fill-available;">
-        <div class="chat-main-row" id="call">
+        <div class="chat-main-row" id="call" [ngClass]="answered && !calling ? '' : 'd-none'">
             <div class="chat-main-wrapper">
                 <div class="col-xs-9 message-view task-view">
                     <div class="chat-window">
@@ -156,14 +156,13 @@
                         <div class="chat-contents">
                             <div class="chat-content-wrap">
                                 <div class="user-video" style="overflow:hidden">
-                                    <video id="vidDisplay" autoplay="true">
-                                                </video>
+                                    <video #comingCall></video>
                                     <!-- <img src="assets/img/video-call.jpg" alt=""> -->
                                 </div>
                                 <div class="my-video">
                                     <ul>
                                         <li style="width: 20rem;">
-                                            <video id="vidDisplay2" class="img-responsive" autoplay="true">
+                                            <video #goingCall class="img-responsive">
                                                     </video>
                                         </li>
                                     </ul>
@@ -191,7 +190,7 @@
             </div>
         </div>
 
-        <div class="call-box outgoing-box" id="outgoing-call" style="display:none">
+        <div class="call-box outgoing-box" id="outgoing-call" [ngClass]="calling ? '' : 'd-none'">
             <div class="call-wrapper">
                 <div class="call-inner">
                     <div class="call-user">
@@ -200,7 +199,7 @@
                         <span class="h3">Connecting...</span>
                     </div>
                     <div class="call-items">
-                        <a onclick="redirect('')" class="btn call-item call-end"><i class="material-icons vcend">call_end</i></a>
+                        <a (click)="calluser(5)" class="btn call-item call-end"><i class="material-icons vcend" (click)="calling=!calling"  >call_end</i></a>
                     </div>
                 </div>
             </div>
@@ -397,4 +396,4 @@
         </div>
     </div>
 </div>
-<div class="sidebar-overlay" data-reff=""></div>
+<div class="sidebar-overlay" data-reff=""></div>x
