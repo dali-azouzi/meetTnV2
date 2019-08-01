@@ -26,7 +26,9 @@ export class EntrepriseProfileComponent implements OnInit {
 
   ngOnInit() {
    this.user=JSON.parse(sessionStorage.getItem("user"))
-
+   if(!this.user.picture){
+    this.user.picture='http://www.sansebastian.edu.py/uass/img/autoridades_uass/no-profile.png'
+  }
 
     this.userform=new FormGroup({
       name: new FormControl(this.user.name),
@@ -70,6 +72,8 @@ export class EntrepriseProfileComponent implements OnInit {
     this.user.adress=this.userform.value.adress
     this.user.picture=this.userimage
     
+    
+    
 
 
 
@@ -101,7 +105,6 @@ function readURL(input) {
       reader.onload = function (e : any) {
         
           $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
-          profilepicture=e.target.result
         
           
       }

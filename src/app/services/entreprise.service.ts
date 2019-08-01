@@ -13,6 +13,10 @@ export class EntrepriseService {
 
   constructor(private http : HttpClient) { }
 
+  addevent(id,body){
+    return this.http.post(host+'event/'+id,body)
+  }
+
   getevents(id){
     return this.http.get(host+'entreprise/events/'+id)
   }

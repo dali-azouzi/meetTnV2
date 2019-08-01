@@ -115,7 +115,10 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.user=JSON.parse(sessionStorage.getItem("user"))
-console.warn(this.user)
+    if(!this.user.picture){
+      this.user.picture='http://www.sansebastian.edu.py/uass/img/autoridades_uass/no-profile.png'
+    }
+
     this.profileForm=new FormGroup({
       username : new FormControl(this.user.name),
       email : new FormControl(this.user.email)

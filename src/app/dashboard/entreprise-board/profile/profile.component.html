@@ -13,7 +13,7 @@
                                 <div class="card-profile-image">
                                     <div class="picture-container">
                                         <div class="picture">
-                                            <img src="{{user.picture}}">
+                                            <img src="{{user.picture}}" class="rounded-circle" id="wizardPicturePreview">
                                             <input (change)="imageupload($event)" type="file" id="wizard-picture" class="">
                                         </div>
                                         <label class="btn btn-sm btn-info mr-4" for="wizard-picture">Edit</label>

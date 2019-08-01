@@ -16,6 +16,7 @@ import { AddEventComponent } from './dashboard/entreprise-board/events/add-event
 import { EventDetailsComponent } from './dashboard/entreprise-board/events/event-details/event-details.component';
 import { InterviewComponent } from './dashboard/entreprise-board/interview/interview.component';
 import { candidateInterviewComponent } from './dashboard/candidate-board/interview/interview.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
 
@@ -41,7 +42,9 @@ const routes: Routes = [
     ]}
   ]},
   {path:'interview/entreprise',component:InterviewComponent},
-  {path:'interview/candidate',component:candidateInterviewComponent}
+  {path:'interview/candidate',component:candidateInterviewComponent},
+  {path:'404',component:NotfoundComponent},
+  {path:'**' , redirectTo :'404',pathMatch:'full'}
 ];
 
 @NgModule({

@@ -1,3 +1,20 @@
-td {
-    padding: 0 !important;
+.al-pricing .al-price-box:hover {
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    transform: translate(0, -3px)
+}
+
+.package {
+    cursor: pointer;
+}
+
+.package:hover {
+    border: 1px solid #00bcd424;
+}
+
+.package:active {
+    border: 1px solid #00bcd424;
+}
+
+.package:checked {
+    border: 1px solid #00bcd424;
 }
