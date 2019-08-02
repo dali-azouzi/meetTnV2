@@ -116,7 +116,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.user=JSON.parse(sessionStorage.getItem("user"))
     if(!this.user.picture){
-      this.user.picture='http://www.sansebastian.edu.py/uass/img/autoridades_uass/no-profile.png'
+      this.user.picture='https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'
     }
 
     this.profileForm=new FormGroup({
