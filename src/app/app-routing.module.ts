@@ -43,8 +43,8 @@ const routes: Routes = [
           {path:'events/event-details/:id',component:EventDetailsComponent}
     ]}
   ]},
-  {path:'interview/entreprise',component:InterviewComponent,canActivate:[AuthGuard],data:{roles:['entreprise']}},
-  {path:'interview/candidate',component:candidateInterviewComponent,canActivate:[AuthGuard],data:{roles:['candidate']}},
+  {path:'interview/entreprise',component:InterviewComponent},
+  {path:'interview/candidate',component:candidateInterviewComponent},
   {path:'404',component:NotfoundComponent},
   {path:'**' , redirectTo :'404',pathMatch:'full'}
 ];

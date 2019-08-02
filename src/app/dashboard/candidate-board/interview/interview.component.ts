@@ -60,7 +60,7 @@ this.loadScript('https://kit.fontawesome.com/d8083af4d6.js')
   ngOnInit() {
 
 
-    let peer = new Peer('ali123');
+    let peer = new Peer("hogabogabooo");
     console.log(peer.id);
     
 
@@ -69,19 +69,37 @@ this.loadScript('https://kit.fontawesome.com/d8083af4d6.js')
 
     let user = JSON.parse(sessionStorage.getItem('user'))
     let entrepriseID='hireme'+123456
-    //  let conn = peer.connect('hireme999')
-    // // on open will be launch when you successfully connect to PeerServer
-    // conn.on('open', function(){
-    //   // here you have conn.id
-    //   conn.send('yo');
-    // })
+     
+    // on open will be launch when you successfully connect to PeerServer
+
+  var conn = peer.connect("test321test321", {
+    reliable: true
+})
+
+
+
+  setTimeout(() => {
+  
+        
+      conn.send("yoloooo")  
+
+  
+  }, 2000);
+  
+
+
+    
     
 let received :boolean =false
 let answered : boolean =false
 let self = this
 
-peer.on('call', function(call) {
-  console.log("call coming");
+ let call =peer.on('call', function(call) {
+  
+  var audio = new Audio('../../../../assets/ringtone.mp3');
+audio.play();
+
+
 
 self.received=true
 self.answered=false
@@ -93,6 +111,7 @@ let coming = self.comingCall.nativeElement
 let going = self.goingCall.nativeElement
 
 $( "#answer" ).click(function() {
+  audio.pause()
   
   console.log('lenna');
   
@@ -100,10 +119,12 @@ $( "#answer" ).click(function() {
  self.answered=true
 
   n.getUserMedia({video: true}, function(stream) {
+    
   call.answer(stream) 
   self.goingCall.nativeElement.srcObject=stream
   self.goingCall.nativeElement.play()
   call.on('stream', function(remoteStream) {
+   
     // Show stream in some video/canvas element.
     self.comingCall.nativeElement.srcObject=remoteStream
     self.comingCall.nativeElement.play()
@@ -112,6 +133,7 @@ $( "#answer" ).click(function() {
   console.log('Failed to get local stream' ,err);
 });
 })
+
 
 $( "#end" ).click(function() {
     self.received=false
@@ -135,9 +157,12 @@ this.received=received
 this.answered=answered
 this.peer=peer
     
+console.log(peer.connections);
+
   }
   ngOnDestroy(){
     this.css('../../../../assets/css/plugins.css')
   }
+
 
 }

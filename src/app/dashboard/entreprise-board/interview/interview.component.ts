@@ -33,10 +33,17 @@ export class InterviewComponent implements OnInit, OnDestroy {
 
     n.getUserMedia({ video: true }, function (stream) {
 
-     let call = peer.call("qyduijjuke000000", stream);
+     let call = peer.call("hogabogabooo", stream);
 
       
        call.on('stream', (remoteStream) => {
+
+        $( "#hangup" ).click(()=>{
+         
+          call.close()
+         self.answered=false
+         self.calling=false
+         })
          
         self.answered=true
         self.calling=false
@@ -57,6 +64,7 @@ export class InterviewComponent implements OnInit, OnDestroy {
 
   }
 
+  
 
 
 
@@ -96,26 +104,27 @@ export class InterviewComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    console.log(this.comingCall);
+   const peer = new Peer("test321test321")
     
     this.deleteCss('./assets/css/plugins.css')
 
     let all_connected: any[] = []
     let user = JSON.parse(sessionStorage.getItem('user'))
-    let peer = new Peer('hireme123456')
+
     peer.on('connection', (conection) => {
       conection.on('data', data => {
-        all_connected.push(data)
-        console.log(all_connected);
+       console.log(data);
+       
       })
     })
+    
 
 
 
 
 
     this.peer = peer
-    console.log(this.peer);
+   
     
     this.user = user
     this.connectedUsers = all_connected

@@ -175,7 +175,7 @@
                                 <ul class="call-items">
 
                                     <li class="call-item">
-                                        <a href="#" title="Full Screen" data-placement="top" data-toggle="tooltip">
+                                        <a title="Full Screen" data-placement="top" data-toggle="tooltip">
                                             <i class="fas fa-phone" aria-hidden="true"></i>
                                         </a>
                                     </li>
@@ -206,8 +206,16 @@
             </div>
         </div>
         <div class="div" [ngClass]="!answered && !received ? '' : 'd-none'">
-            <p> waiting for call</p>
+            <div class="jumbotron m-0">
+                <div class="col-12 m-0">
+                    <div class="h3" style="margin-left: 1rem">interviewers has been notified by your presence ...</div>
+                    <div class="h4" style="margin-left: 2rem">take a coffe or two , they will call you soon</div>
+                </div>
+                <div class="col-12 m-0" style="background: #e9c734;height: 40rem;padding-top: 10rem;">
+                    <img src="https://cdn.dribbble.com/users/901546/screenshots/2485950/character-dribbble.gif" />
+                </div>
 
+            </div>
         </div>
 
 

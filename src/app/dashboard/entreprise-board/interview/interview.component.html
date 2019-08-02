@@ -130,6 +130,7 @@
         </div>
     </div>
     <div class="page-wrapper" style="min-height: -webkit-fill-available;">
+        <div class="div" [ngClass]="!answered && !calling ? '' : 'd-none'"></div>
 
         <div class="chat-main-row" id="call" [ngClass]="answered && !calling ? '' : 'd-none'">
             <div class="chat-main-wrapper">
@@ -174,8 +175,8 @@
                             <div class="call-icons">
                                 <ul class="call-items">
 
-                                    <li class="call-item">
-                                        <a href="#" title="Full Screen" data-placement="top" data-toggle="tooltip">
+                                    <li class="call-item" id="hangup">
+                                        <a title="Full Screen" data-placement="top" data-toggle="tooltip">
                                             <i class="fas fa-phone" aria-hidden="true"></i>
                                         </a>
                                     </li>
