@@ -162,6 +162,7 @@ console.log(peer.connections);
   }
   ngOnDestroy(){
     this.css('../../../../assets/css/plugins.css')
+    this.peer.destroy()
   }
 
 

@@ -131,6 +131,7 @@ export class InterviewComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.css('../../../../assets/css/plugins.css')
+    this.peer.destroy()
   }
 
 }
