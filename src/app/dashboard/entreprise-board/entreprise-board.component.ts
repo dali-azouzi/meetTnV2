@@ -13,6 +13,9 @@ export class EntrepriseBoardComponent implements OnInit {
   events
   subs
   NotificationSubs=0
+  isItLive : boolean =false
+  eventId:any
+  today = Date.now()/1000
 
 Notfication:any[]=[]
 
@@ -23,8 +26,7 @@ constructor(private service : EntrepriseService , private router : Router) { }
     this.service.getevents(JSON.parse(sessionStorage.getItem("user")).id).subscribe(
       (data:any[])=>{
         this.events=data
-      
-      
+        /*******/
        for (let index = 0; index < this.events.length; index++) {
         
         this.service.displaySubs(this.events[index].id).subscribe(
@@ -52,8 +54,20 @@ constructor(private service : EntrepriseService , private router : Router) { }
             }
           
           }
-        
           )
+           }
+           for (let index = 0; index < this.events.length; index++) {
+             let since = new Date(this.events[index].since).getTime()/1000           
+             let until = new Date(this.events[index].until).getTime()/1000
+
+            if ( (since <= this.today) && (this.today <=until) ){
+
+              
+            this.isItLive=true
+            this.eventId=this.events[index].id
+           break
+            }
+            
            }
 
       }

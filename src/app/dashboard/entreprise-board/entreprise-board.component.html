@@ -46,6 +46,7 @@
                         <i class="ni ni-calendar-grid-58 text-blue"></i> My events
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" routerLink="profile">
                         <i class="ni ni-single-02 text-yellow"></i> User profile
@@ -53,8 +54,14 @@
                 </li>
 
             </ul>
+            <div class="absolute-middle-center baha border-radius-100 nav-item" *ngIf="isItLive">
+                <a class="nav-link text-white" routerLink="events/:{{eventId}}">
+                    <i class="ni ni-sound-wave text-white"></i> Live
 
-            <ul class="navbar-nav align-items-center d-none d-md-flex  offset-5">
+                </a>
+            </div>
+
+            <ul class="navbar-nav align-items-center d-none d-md-flex  offset-3">
                 <li class="nav-item dropdown">
                     <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media align-items-center">
@@ -64,6 +71,7 @@
                               </button>
                         </div>
                     </a>
+
                     <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
                         <div class=" dropdown-header noti-title">
                             <h6 class="text-overflow m-0">Notifications</h6>
@@ -75,13 +83,12 @@
                             </a>
                         </ng-container>
 
-
-
-
                     </div>
+
 
                 </li>
             </ul>
+
             <button class="btn ml-6 animated" type="button" (mouseover)="hover=true" (mouseout)="hover=false" (click)='logout()' [ngClass]="hover? ' btn-danger' : ''">
                 <span  class="" style="line-height: 0;">
                 <i  class="ni ni-user-run"></i>

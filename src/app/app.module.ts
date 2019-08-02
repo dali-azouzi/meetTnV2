@@ -29,6 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InterviewComponent } from './dashboard/entreprise-board/interview/interview.component';
 import { candidateInterviewComponent } from './dashboard/candidate-board/interview/interview.component';
 
+import { LandingFooterComponent } from './landing/footer/footer.component';
+import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +54,8 @@ import { candidateInterviewComponent } from './dashboard/candidate-board/intervi
     EntrepriseProfileComponent,
     NotfoundComponent,
     InterviewComponent,
-    candidateInterviewComponent
+    candidateInterviewComponent,
+    LandingFooterComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,7 @@ import { candidateInterviewComponent } from './dashboard/candidate-board/intervi
     ReactiveFormsModule
   
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

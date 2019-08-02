@@ -130,10 +130,10 @@
         </div>
     </div>
     <div class="page-wrapper">
-        <div class="chat-main-row" id="call">
+        <div class="chat-main-row" style="position:relative" id="call" [ngClass]=" answered && !received ? '' : 'd-none'">
             <div class="chat-main-wrapper">
                 <div class="col-xs-9 message-view task-view">
-                    <div class="chat-window">
+                    <div class="chat-window" style="height:565px">
                         <div class="chat-header">
                             <div class="navbar">
                                 <div class="user-details">
@@ -156,14 +156,14 @@
                         <div class="chat-contents">
                             <div class="chat-content-wrap">
                                 <div class="user-video" style="overflow:hidden">
-                                    <video id="vidDisplay" autoplay="true">
+                                    <video #comingCall style="position: relative;" class="img-responsive">
                                             <!-- <img src="../../../../assets/interview/assets/img/video-call.jpg" alt=""> -->
                                         </video>
                                 </div>
                                 <div class="my-video">
                                     <ul>
                                         <li style="width: 20rem;">
-                                            <video id="vidDisplay2" class="img-responsive" autoplay="true">
+                                            <video #goingCall class="img-responsive">
                                                     </video>
                                         </li>
                                     </ul>
@@ -190,7 +190,7 @@
                 </div>
             </div>
         </div>
-        <div class="call-box incoming-box" id="incoming-call">
+        <div class="call-box incoming-box" id="incoming-call" [ngClass]="!answered && received ? '' : 'd-none'">
             <div class="call-wrapper">
                 <div class="call-inner">
                     <div class="call-user">
@@ -199,14 +199,16 @@
                         <span class="h3">Calling ...</span>
                     </div>
                     <div class="call-items">
-                        <a href="chat.html" class="btn call-item call-end"><i class="material-icons">call_end</i></a>
-                        <a href="video-call.html" class="btn call-item call-start"><i class="material-icons">call</i></a>
+                        <a (click)="callHandle = true" id="end" class="btn call-item call-end"><i class="material-icons">call_end</i></a>
+                        <a (click)="callHandle=false" id="answer" class="btn call-item call-start"><i class="material-icons">call</i></a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="div" [ngClass]="!answered && !received ? '' : 'd-none'">
+            <p> waiting for call</p>
 
-
+        </div>
 
 
     </div>

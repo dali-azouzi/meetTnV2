@@ -1,5 +1,41 @@
 @import url('../../../assets/dashboard/vendor/nucleo/css/nucleo.css');
 @import url('../../../assets/dashboard/vendor/@fortawesome/fontawesome-free/css/all.min.css');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+.baha {
+    background: red;
+    animation: myfirst 5s;
+    -moz-animation: myfirst 5s infinite;
+    /* Firefox */
+    -webkit-animation: myfirst 5s infinite;
+    /* Safari and Chrome */
+}
 
+@-moz-keyframes myfirst
+/* Firefox */
 
+{
+    0% {
+        background: red;
+    }
+    50% {
+        background: yellow;
+    }
+    100% {
+        background: red;
+    }
+}
+
+@-webkit-keyframes myfirst
+/* Safari and Chrome */
+
+{
+    0% {
+        background: red;
+    }
+    50% {
+        background: yellow;
+    }
+    100% {
+        background: red;
+    }
+}

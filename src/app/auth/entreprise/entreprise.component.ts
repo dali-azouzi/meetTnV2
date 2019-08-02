@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 declare const $:any;
 @Component({
@@ -18,13 +19,19 @@ export class EntrepriseLoginComponent implements OnInit {
 
   });
 
-  constructor(private Service:AuthService) { }
+  constructor(private Service:AuthService ,  private router : Router) { }
+
+  
+
   signup(){
     console.log(this.EntrepriseForm.value);
     
     this.Service.addEntreprise(this.EntrepriseForm.value).subscribe(
       data=>{
-        console.log(data);
+        if(data){
+          sessionStorage.setItem("user",JSON.stringify(data))
+          this.router.navigate(['dashboard/entreprise'])
+        }
       }
     );
   }

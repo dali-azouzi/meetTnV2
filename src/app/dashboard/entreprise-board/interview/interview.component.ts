@@ -22,9 +22,7 @@ export class InterviewComponent implements OnInit, OnDestroy {
     console.log(this.peer);
 
     let peer = this.peer
-    let answered=this.answered
-    let calling = this.calling
-
+    let self=this
 
     let coming = this.comingCall.nativeElement
     let going = this.goingCall.nativeElement
@@ -35,12 +33,13 @@ export class InterviewComponent implements OnInit, OnDestroy {
 
     n.getUserMedia({ video: true }, function (stream) {
 
-     let call = peer.call("bttp0c9gx3900001", stream);
+     let call = peer.call("qyduijjuke000000", stream);
 
       
        call.on('stream', (remoteStream) => {
-        answered=true
-        calling=false
+         
+        self.answered=true
+        self.calling=false
         
         going.srcObject = stream;
         going.play();

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 const host :string ="http://localhost:5000/";
 
@@ -20,5 +20,11 @@ export class AuthService {
   login(body:any){
    return this.router.post(host+'auth/login',body)
   }
+  
+  uploadImage(file , userID){
+    let headers: HttpHeaders = new HttpHeaders();
+     return this.router.post(`http://us-central1-hiremestorage-3b2b1.cloudfunctions.net/imageUpload?id=${userID}`
+     , file)
+   }
 
 }

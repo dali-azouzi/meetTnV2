@@ -35,6 +35,6 @@ export class CandidateService {
 
 
     subscribe(id_event , id_subscriber){
-        return this.http.put(`${host}/event/${id_event}/${id_subscriber}`,{})
+        return this.http.put(`${host}event/${id_event}/${id_subscriber}`,{})
     }
 }

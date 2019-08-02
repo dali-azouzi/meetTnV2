@@ -27,7 +27,12 @@ export class AddEventComponent implements OnInit , OnDestroy{
 switchDateformat(date :string):string{
   let datearray:any[]=[]
   datearray=date.split('/')
-  return ( `${datearray[2]}-${datearray[1]}-${datearray[0]}`  )
+
+
+let day = parseInt(datearray[1])+1
+
+  
+  return ( `${datearray[2]}-${datearray[0]}-${'0'+day.toString()}`  )
 }
 
 

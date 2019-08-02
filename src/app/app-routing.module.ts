@@ -17,32 +17,34 @@ import { EventDetailsComponent } from './dashboard/entreprise-board/events/event
 import { InterviewComponent } from './dashboard/entreprise-board/interview/interview.component';
 import { candidateInterviewComponent } from './dashboard/candidate-board/interview/interview.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 
  
   {path:'',component:LandingComponent,children:[
-    {path:'',component: CandidateComponent},
+    {path:'',redirectTo:'landing1',pathMatch:'full'},
+    {path:'landing1',component: CandidateComponent},
     {path:'landing2',component:EntrepriseComponent},
     {path:"login",component:LoginComponent},
   ]},
   {path:'landing1',redirectTo:'',pathMatch:'full'},
   {path:'auth/entreprise',component : EntrepriseLoginComponent},
   {path:'dashboard' , children:[
-    {path:"candidate", component:CandidateBoardComponent,children:[
+    {path:"candidate", canActivate:[AuthGuard],data:{roles:['candidate']} ,component:CandidateBoardComponent,children:[
         {path:'profile',component:ProfileComponent},
         {path:'matches',component:MatchesComponent},
         {path:'myevents',component:MyEventsComponent}
     ]},
-    {path:'entreprise',component:EntrepriseBoardComponent,children:[
+    {path:'entreprise',canActivate:[AuthGuard],data:{roles:['entreprise']},component:EntrepriseBoardComponent,children:[
       {path:'profile',component:EntrepriseProfileComponent},
         {path:'events',component:EventsComponent},
           {path:'events/add',component:AddEventComponent},
           {path:'events/event-details/:id',component:EventDetailsComponent}
     ]}
   ]},
-  {path:'interview/entreprise',component:InterviewComponent},
-  {path:'interview/candidate',component:candidateInterviewComponent},
+  {path:'interview/entreprise',component:InterviewComponent,canActivate:[AuthGuard],data:{roles:['entreprise']}},
+  {path:'interview/candidate',component:candidateInterviewComponent,canActivate:[AuthGuard],data:{roles:['candidate']}},
   {path:'404',component:NotfoundComponent},
   {path:'**' , redirectTo :'404',pathMatch:'full'}
 ];
